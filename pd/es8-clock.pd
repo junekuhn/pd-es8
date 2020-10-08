@@ -1,0 +1,41 @@
+#N canvas 201 208 851 597 12;
+#X obj 265 38 tgl 23 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 1 1;
+#X obj 239 105 bng 34 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X msg 298 39 1, f 2;
+#X floatatom 339 39 5 0 0 0 - - -, f 5;
+#X obj 311 147 tgl 24 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 271 448 dac~ 1 2 3 4 5 6 7 8;
+#X obj 276 270 line~;
+#X obj 280 178 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X msg 277 213 1 0 \, 0 5;
+#X text 480 37 bpm calculator;
+#X text 354 214 Generate a 5ms pulse;
+#X text 324 266 convert to audio rate;
+#X obj 289 87 metro 3000;
+#X floatatom 521 191 5 0 0 0 - - -, f 5;
+#X obj 540 70 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X floatatom 541 115 5 0 0 0 - - -, f 5;
+#X obj 501 152 /;
+#X msg 486 114 60000;
+#X text 589 114 bpm;
+#X text 572 194 ms;
+#X connect 0 0 1 0;
+#X connect 0 0 12 0;
+#X connect 2 0 12 0;
+#X connect 3 0 12 1;
+#X connect 4 0 7 0;
+#X connect 6 0 5 0;
+#X connect 6 0 5 5;
+#X connect 7 0 8 0;
+#X connect 8 0 6 0;
+#X connect 12 0 4 0;
+#X connect 14 0 15 0;
+#X connect 14 0 17 0;
+#X connect 15 0 16 1;
+#X connect 16 0 13 0;
+#X connect 17 0 16 0;

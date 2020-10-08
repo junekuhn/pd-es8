@@ -1,0 +1,92 @@
+#N canvas 213 190 813 716 10;
+#X obj 288 363 osc~;
+#X obj 288 589 dac~ 1 2;
+#X obj 272 298 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 4600 1;
+#X obj 288 343 mtof;
+#X obj 435 373 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X msg 435 392 \; pd dsp \$1;
+#X obj 334 470 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 2700 1;
+#X obj 330 489 / 127;
+#X obj 330 529 line~;
+#X obj 288 552 *~;
+#X text 358 163 task 3: add ring mod/lfo stage;
+#X obj 288 442 *~;
+#X text 324 441 <add a second oscillator here>;
+#X msg 330 509 \$1 50;
+#X text 367 240 <add another slider - cmd/ctl + j>;
+#X obj 343 324 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 7400 1;
+#X obj 354 414 osc~;
+#X text 271 271 carrier;
+#X text 351 351 modulator;
+#X obj 354 392 mtof;
+#X obj 20 417 osc~;
+#X msg 20 442 \$1 50;
+#X floatatom 22 469 5 0 0 0 - - -, f 5;
+#X symbolatom 22 493 10 0 0 0 - - -, f 10;
+#X text 21 524 comment;
+#X text 79 419 ctrl-1 Object;
+#X text 85 442 ctrl-2 message;
+#X text 102 469 ctrl-3 number;
+#X text 113 493 ctrl-4;
+#X text 111 526 ctrl-5;
+#X obj 100 57 metro 120;
+#X obj 76 8 tgl 23 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000
+0 1;
+#X obj 50 75 bng 34 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X msg 109 9 1, f 2;
+#X floatatom 150 9 5 0 0 0 - - -, f 5;
+#X obj 100 97 tgl 24 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 220 161 snapshot~;
+#X obj 220 115 line~;
+#X floatatom 220 191 1 0 0 0 - - -, f 1;
+#X obj 262 138 metro 100;
+#X msg 220 17 1 1000;
+#X text 275 16 a pair of numbers starts a ramp;
+#X msg 280 64 2;
+#X text 312 64 a single number jumps to value;
+#X msg 278 89 stop;
+#X text 321 88 "stop" message freezes line~ at its current value;
+#X msg 247 64 0;
+#X msg 230 39 0 5000;
+#X obj 262 115 loadbang;
+#X text 545 68 The [line~] object generates linear ramps whose levels
+and timing are determined by messages you send it. The messages may
+be a single target value (causing the output to jump to the target)
+or a target and a time in milliseconds (to start a new ramp).;
+#X obj 640 2 pddp/dsp;
+#X text 322 111 I think this is most useful as a env gen;
+#X connect 0 0 11 0;
+#X connect 2 0 3 0;
+#X connect 3 0 0 0;
+#X connect 4 0 5 0;
+#X connect 6 0 7 0;
+#X connect 7 0 13 0;
+#X connect 8 0 9 1;
+#X connect 9 0 1 0;
+#X connect 9 0 1 1;
+#X connect 11 0 9 0;
+#X connect 13 0 8 0;
+#X connect 15 0 19 0;
+#X connect 16 0 11 1;
+#X connect 19 0 16 0;
+#X connect 22 0 23 0;
+#X connect 30 0 35 0;
+#X connect 31 0 30 0;
+#X connect 31 0 32 0;
+#X connect 33 0 30 0;
+#X connect 34 0 30 1;
+#X connect 36 0 38 0;
+#X connect 37 0 36 0;
+#X connect 39 0 36 0;
+#X connect 40 0 37 0;
+#X connect 42 0 37 0;
+#X connect 44 0 37 0;
+#X connect 46 0 37 0;
+#X connect 47 0 37 0;
+#X connect 48 0 39 0;

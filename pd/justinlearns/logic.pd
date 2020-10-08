@@ -1,0 +1,43 @@
+#N canvas 109 301 1096 771 12;
+#X msg 20 436 \; pd dsp \$1;
+#X obj 20 415 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 152 100 spigot;
+#X text 225 99 conditional data flow;
+#X floatatom 166 12 5 0 0 0 - - -, f 5;
+#X obj 166 43 == 100;
+#X floatatom 180 73 5 0 0 0 - - -, f 5;
+#X obj 153 143 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X floatatom 180 140 5 0 0 0 - - -, f 5;
+#X text 82 50 simple if;
+#X obj 466 94 moses 50;
+#X floatatom 464 50 5 0 0 0 - - -, f 5;
+#X obj 465 136 bng 23 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 519 135 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X text 537 97 threshold;
+#X msg 516 55 40;
+#X obj 48 224 select 1 2;
+#X floatatom 48 196 0 0 0 0 - - -;
+#X obj 48 301 print select-1;
+#X obj 76 274 print select-2;
+#X obj 115 250 print select-3;
+#X text 145 207 outputs a bang on match;
+#X text 170 305 select-3 is 'else';
+#X connect 1 0 0 0;
+#X connect 2 0 7 0;
+#X connect 2 0 8 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 5 0 2 0;
+#X connect 6 0 2 1;
+#X connect 10 0 12 0;
+#X connect 10 1 13 0;
+#X connect 11 0 10 0;
+#X connect 15 0 10 1;
+#X connect 16 0 18 0;
+#X connect 16 1 19 0;
+#X connect 16 2 20 0;
+#X connect 17 0 16 0;
